@@ -8,10 +8,14 @@
     <string name="close_drawer">Navigation Drawer is close</string>
 
     <string name="home_fragment_title">Home</string>
-    <string name="home_fragment_hello">Hello from Home</string>
-    <string name="arrivals_fragment_title">Arrivals</string>
-    <string name="arrivals_fragment_hello">Hello from Arrivals</string>
-    <string name="departures_fragment_title">Departures</string>
-    <string name="departures_fragment_hello">Hello from Departures</string>
+    <string name="home_fragment_hello">¡¡Bienvenido a tu app!!</string>
+    <string name="comida_fragment_title">Comida</string>
+    <string name="comida_fragment_hello">¡¡Bienvenido a tu menú!!</string>
+    <string name="header">Header</string>
+    <string name="home_nav_menu_drawer">Home</string>
+    <string name="comida_nav_menu_drawer">Comida</string>
+    <string name="otros_nav_menu_drawer">Otros</string>
+    <string name="perfil_nav_menu_drawer">Perfil</string>
+    <string name="configuracion_nav_menu_drawer">Configuración</string>
 
 </resources>

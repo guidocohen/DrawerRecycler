@@ -1,17 +1,15 @@
 package com.guido.navigationdraw.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 import com.guido.navigationdraw.R
-import com.guido.navigationdraw.fragments.ArrivalsFragment
-import com.guido.navigationdraw.fragments.DeparturesFragment
+import com.guido.navigationdraw.fragments.ComidaFragment
 import com.guido.navigationdraw.fragments.HomeFragment
 import com.guido.navigationdraw.toast
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,10 +21,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        setSupportActionBar(toolbar)
         setNavDrawer()
         setUserHeaderInformation()
 
-        if(savedInstanceState == null) {
+        // Esto es para que no vaya a la Home al girar la pantalla
+        if (savedInstanceState == null) {
             fragmentTransaction(HomeFragment())
             nav_view.menu.getItem(0).isChecked = true
         }
@@ -54,15 +54,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private fun loadFragmentById(id: Int) {
         when (id) {
             R.id.nav_home -> fragmentTransaction(HomeFragment())
-            R.id.nav_departures -> fragmentTransaction(DeparturesFragment())
-            R.id.nav_arrivals -> fragmentTransaction(ArrivalsFragment())
+            R.id.nav_departures -> fragmentTransaction(ComidaFragment())
         }
     }
 
     private fun showMessageNavItemSelectedById(id: Int) {
         when (id) {
-            R.id.nav_profile -> toast("Profile")
-            R.id.nav_settings -> toast("Settings")
+            R.id.nav_profile -> toast("Perfil")
+            R.id.nav_settings -> toast("Configuración")
         }
     }
 
@@ -84,9 +83,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     // Si está abierto el drawer y presiono back => me lo cierra pero no la app
     override fun onBackPressed() {
-        if(drawer_layout.isDrawerOpen(GravityCompat.START)) {
+        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)
-        } else{
+        } else {
             super.onBackPressed()
         }
     }
