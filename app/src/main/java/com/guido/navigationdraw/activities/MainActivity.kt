@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private fun loadFragmentById(id: Int) {
         when (id) {
             R.id.nav_home -> fragmentTransaction(HomeFragment())
-            R.id.nav_departures -> fragmentTransaction(ComidaFragment())
+            R.id.nav_food -> fragmentTransaction(ComidaFragment())
         }
     }
 
@@ -79,7 +79,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
-
 
     // Si está abierto el drawer y presiono back => me lo cierra pero no la app
     override fun onBackPressed() {

@@ -10,8 +10,8 @@
             android:title="@string/home_nav_menu_drawer" />
 
         <item
-            android:id="@+id/nav_departures"
-            android:icon="@drawable/ic_departure"
+            android:id="@+id/nav_food"
+            android:icon="@drawable/ic_fastfood"
             android:title="@string/comida_nav_menu_drawer" />
 
     </group>
